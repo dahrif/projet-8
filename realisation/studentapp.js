@@ -9,7 +9,7 @@ function getall() {
       studentsList = JSON.parse(data);
       console.log(studentsList);
       for (var i = 0; i < studentsList.length; i++) {
-        $(".studentsList").append('<tr><td>'+"Name: "+studentsList[i]["name"]+'</td><td>'+"FatherName: "+studentsList[i]["fathername"]+'</td><td>'+"Rollno: "+studentsList[i]["rollno"]+'</td><td>'+"Degree: "+studentsList[i]["degree"]+'</td><td>'+"Branch: "+studentsList[i]["branch"]+'<span class="update-btn">update</span><span class="delete-btn">delete</span><input type="hidden" value="" class="stdID"></td></tr>');
+        $(".studentsList").append('<tr><td>'+"Numero: "+studentsList[i]["numero"]+'</td><td>'+"capacité: "+studentsList[i]["capacite"]+'</td><td>'+"nombre de tableaux: "+studentsList[i]["nb_tableaux"]+'</td><td>'+"formateur: "+studentsList[i]["formateur"]+'</td><td><span class="update-btn">update</span><span class="delete-btn">delete</span><input type="hidden" value="" class="stdID"></td></tr>');
       }
     }
   })
@@ -21,21 +21,19 @@ $("body").on("click",".studentsList .update-btn",function() {
   $("tr").hide();
   $(".edit-form").show();
   var index = $(this).parents("tr").index();
-  $(".edit-form .studentName").val(studentsList[index]["name"]);
-  $(".edit-form .studentFname").val(studentsList[index]["fathername"]);
-  $(".edit-form .studentRollno").val(studentsList[index]["rollno"]);
-  $(".edit-form .studentDegree").val(studentsList[index]["degree"]);
-  $(".edit-form .studentBranch").val(studentsList[index]["branch"]);
+  $(".edit-form .numero").val(studentsList[index]["numero"]);
+  $(".edit-form .capacite").val(studentsList[index]["capacite"]);
+  $(".edit-form .nb_tableaux").val(studentsList[index]["nb_tableaux"]);
+  $(".edit-form .formateur").val(studentsList[index]["formateur"]);
   $(".edit-form .sid").val(studentsList[index]["id"]);
 });
 
 // save-student-to-database
 $(".save-student").click(function() {
-  var sName = $(".edit-form .studentName").val();
-  var sFname = $(".edit-form .studentFname").val();
-  var sRollno = $(".edit-form .studentRollno").val();
-  var sDegree = $(".edit-form .studentDegree").val();
-  var sBranch = $(".edit-form .studentBranch").val();
+  var sName = $(".edit-form .numero").val();
+  var sFname = $(".edit-form .capacite").val();
+  var sRollno = $(".edit-form .nb_tableaux").val();
+  var sDegree = $(".edit-form .formateur").val();
   var sID = $(".edit-form .sid").val();
 
  //send to php file via ajax
@@ -60,11 +58,10 @@ $(".save-student").click(function() {
 
 // Add a student to database
 $(".submit-student").click(function() {
-  var sName = $(".studentName").val();
-  var sFname = $(".studentFname").val();
-  var sRollno = $(".studentRollno").val();
-  var sDegree = $(".studentDegree").val();
-  var sBranch = $(".studentBranch").val();
+  var sName = $(".numero").val();
+  var sFname = $(".capacite").val();
+  var sRollno = $(".nb_tableaux").val();
+  var sDegree = $(".formateur").val();
 
   $.ajax({
     url:"/api/addStudents.php",

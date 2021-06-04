@@ -1,11 +1,10 @@
 <?php
 $dbh = new PDO("mysql:host=localhost;dbname=schoolstd","root","root2021");
-$sql = " INSERT INTO schoolstudents(name,fathername,rollno,degree,branch) VALUES (:name,:fathername,:rollno,:degree,:branch)";
+$sql = " INSERT INTO salles(numero,capacite,nb_tableaux,formateur) VALUES (:numero,:capacite,:nb_tableaux,:formateur)";
 $addStudentsQuery = $dbh->prepare($sql);
-$addStudentsQuery->bindParam(":name",$_POST["name"],PDO::PARAM_STR);
-$addStudentsQuery->bindParam(":fathername",$_POST["fathername"],PDO::PARAM_STR);
-$addStudentsQuery->bindParam(":rollno",$_POST["rollno"],PDO::PARAM_STR);
-$addStudentsQuery->bindParam(":degree",$_POST["degree"],PDO::PARAM_STR);
-$addStudentsQuery->bindParam(":branch",$_POST["branch"],PDO::PARAM_STR);
+$addStudentsQuery->bindParam(":numero",$_POST["numero"],PDO::PARAM_STR);
+$addStudentsQuery->bindParam(":capacite",$_POST["capacite"],PDO::PARAM_STR);
+$addStudentsQuery->bindParam(":nb_tableaux",$_POST["nb_tableaux"],PDO::PARAM_STR);
+$addStudentsQuery->bindParam(":formateur",$_POST["formateur"],PDO::PARAM_STR);
 $addStudentsQuery->execute();
 ?>

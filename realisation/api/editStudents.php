@@ -1,12 +1,11 @@
 <?php
 $id = $_POST["sid"];
 $dbh = new PDO("mysql:host=localhost;dbname=schoolstd","root","root2021");
-$sql = "UPDATE schoolstudents SET name = :name,fathername = :fathername,rollno = :rollno,degree = :degree,branch = :branch WHERE id = $id";
+$sql = "UPDATE schoolstudents SET numero = :numero,capacite = :capacite,nb_tableaux = :nb_tableaux,formateur = :formateur WHERE id = $id";
 $addStudentsQuery = $dbh->prepare($sql);
 $addStudentsQuery->bindParam(":name",$_POST["name"],PDO::PARAM_STR);
-$addStudentsQuery->bindParam(":fathername",$_POST["fathername"],PDO::PARAM_STR);
-$addStudentsQuery->bindParam(":rollno",$_POST["rollno"],PDO::PARAM_STR);
-$addStudentsQuery->bindParam(":degree",$_POST["degree"],PDO::PARAM_STR);
-$addStudentsQuery->bindParam(":branch",$_POST["branch"],PDO::PARAM_STR);
+$addStudentsQuery->bindParam(":capacite",$_POST["capacite"],PDO::PARAM_STR);
+$addStudentsQuery->bindParam(":nb_tableaux",$_POST["nb_tableaux"],PDO::PARAM_STR);
+$addStudentsQuery->bindParam(":formateur",$_POST["formateur"],PDO::PARAM_STR);
 $addStudentsQuery->execute();
 ?>
