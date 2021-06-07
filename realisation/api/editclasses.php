@@ -1,7 +1,7 @@
 <?php
 $id = $_POST["sid"];
 $dbh = new PDO("mysql:host=localhost;dbname=schoolstd","root","root2021");
-$sql = "UPDATE schoolstudents SET numero = :numero,capacite = :capacite,nb_tableaux = :nb_tableaux,formateur = :formateur WHERE id = $id";
+$sql = "UPDATE salles SET numero = :numero,capacite = :capacite,nb_tableaux = :nb_tableaux,formateur = :formateur WHERE id = $id";
 $addStudentsQuery = $dbh->prepare($sql);
 $addStudentsQuery->bindParam(":name",$_POST["name"],PDO::PARAM_STR);
 $addStudentsQuery->bindParam(":capacite",$_POST["capacite"],PDO::PARAM_STR);

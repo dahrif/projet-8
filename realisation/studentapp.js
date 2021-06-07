@@ -3,13 +3,12 @@ var studentsList;
 function getall() {
   $(".studentsList").html(" ");
   $.ajax({
-    url:"/api/getStudents.php",
+    url:"/api/getclasses.php",
     method:"GET",
     success:function(data) {
       studentsList = JSON.parse(data);
-      console.log(studentsList);
       for (var i = 0; i < studentsList.length; i++) {
-        $(".studentsList").append('<tr><td>'+"Numero: "+studentsList[i]["numero"]+'</td><td>'+"capacité: "+studentsList[i]["capacite"]+'</td><td>'+"nombre de tableaux: "+studentsList[i]["nb_tableaux"]+'</td><td>'+"formateur: "+studentsList[i]["formateur"]+'</td><td><span class="update-btn">update</span><span class="delete-btn">delete</span><input type="hidden" value="" class="stdID"></td></tr>');
+        $(".studentsList").append('<tr><td>'+studentsList[i]["numero"]+'</td><td>'+studentsList[i]["capacite"]+'</td><td>'+studentsList[i]["nb_tableaux"]+'</td><td>'+studentsList[i]["formateur"]+'</td><td><span class="update-btn btn-sucess">update</span><span class="delete-btn">delete</span><input type="hidden" value="" class="stdID"></td></tr>');
       }
     }
   })
@@ -21,32 +20,31 @@ $("body").on("click",".studentsList .update-btn",function() {
   $("tr").hide();
   $(".edit-form").show();
   var index = $(this).parents("tr").index();
-  $(".edit-form .numero").val(studentsList[index]["numero"]);
-  $(".edit-form .capacite").val(studentsList[index]["capacite"]);
-  $(".edit-form .nb_tableaux").val(studentsList[index]["nb_tableaux"]);
-  $(".edit-form .formateur").val(studentsList[index]["formateur"]);
+  $(".edit-form .cnumero").val(studentsList[index]["numero"]);
+  $(".edit-form .ccapacite").val(studentsList[index]["capacite"]);
+  $(".edit-form .cnb_tableaux").val(studentsList[index]["nb_tableaux"]);
+  $(".edit-form .cformateur").val(studentsList[index]["formateur"]);
   $(".edit-form .sid").val(studentsList[index]["id"]);
 });
 
 // save-student-to-database
 $(".save-student").click(function() {
-  var sName = $(".edit-form .numero").val();
-  var sFname = $(".edit-form .capacite").val();
-  var sRollno = $(".edit-form .nb_tableaux").val();
-  var sDegree = $(".edit-form .formateur").val();
+  var Numero = $(".edit-form .cnumero").val();
+  var Capacite = $(".edit-form .ccapacite").val();
+  var Nb_tableaux = $(".edit-form .cnb_tableaux").val();
+  var Formateur = $(".edit-form .cformateur").val();
   var sID = $(".edit-form .sid").val();
 
  //send to php file via ajax
  $.ajax({
-  url:"api/editStudents.php",
+  url:"api/editclasses.php",
   method:"POST",
   data:{
     sid : sID,
-    name : sName,
-    fathername : sFname,
-    rollno : sRollno,
-    degree : sDegree,
-    branch : sBranch
+    numero : Numero,
+    capacite : Capacite,
+    nb_tableaux : Nb_tableaux,
+    formateur : Formateur
   },
       success:function(data) {
       getall();
@@ -58,20 +56,19 @@ $(".save-student").click(function() {
 
 // Add a student to database
 $(".submit-student").click(function() {
-  var sName = $(".numero").val();
-  var sFname = $(".capacite").val();
-  var sRollno = $(".nb_tableaux").val();
-  var sDegree = $(".formateur").val();
+  var Numero = $(".cnumero").val();
+  var Capacite = $(".ccapacite").val();
+  var Nb_tableaux = $(".cnb_tableaux").val();
+  var Formateur = $(".cformateur").val();
 
   $.ajax({
-    url:"/api/addStudents.php",
+    url:"/api/addclasses.php",
     method:"POST",
     data:{
-      name :sName,
-      fathername :sFname,
-      rollno :sRollno,
-      degree :sDegree,
-      branch :sBranch
+      numero :Numero,
+      capacite :Capacite,
+      nb_tableaux :Nb_tableaux,
+      formateur :Formateur
     },
     success:function(data) {
     getall();
@@ -83,7 +80,7 @@ $("body").on("click",".delete-btn",function() {
   $(".studentsList .stdID").val(studentsList[index]["id"]);
   var studentID =$(".studentsList .stdID").val();
   $.ajax({
-    url:"/api/deleteStudent.php",
+    url:"/api/deleteclasses.php",
     method:"POST",
     data:{
       sid :studentID
@@ -95,7 +92,7 @@ $("body").on("click",".delete-btn",function() {
   })
 })
 $(".downArrow").click(function() {
-  $(".add-form").slideToggle("slow");
+  $(".add-form").show();
 })
 $(".save-student").click(function() {
 $(".edit-form").hide();
@@ -105,10 +102,17 @@ $(".add-form").hide();
 })
 $(".close").click(function() {
 $(".add-form").hide();
+Element.classList.remove('filtre')
 })
 $(".close").click(function() {
 $(".edit-form").hide("fast",function() {
 getall();
 });
 })
+
+  
+function funct() {
+  var element = document.getElementById("filtre");
+  element.classList.toggle("filtre");
+}
 })

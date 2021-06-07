@@ -5,58 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD-APP</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
   </head>
   <body>
-    <header>
-    <h1 class="heading">CRUD example in Ajax, jQuery, PHP</h1>
-    <div class="arrow">
-      <center><img src="./images/downarrow.png" class="downArrow"/></center>
-    </div>
-  </header>
-    <div class="add-form">
-      <h2 class="addForm-head">Add-Form</h2>
-      <img src="./images/close.png" alt="" class="close">
-      <label>Name</label>
-      <input type="text" name="" value="" class="numeo"><br>
-      <label>Father's name</label>
-      <input type="text" name="" value="" class="capacite"><br>
-      <label>Rollno</label>
-      <input type="text" name="" value="" class="nb_tableaux"><br>
-      <label>Degree</label>
-      <input type="text" name="" value="" class="formateur"><br>
-      <input type="submit" name="" value="Add student" class="submit-student">
-    </div>
-    <table border="1" class="studentsList">
-        <!-- <tr>
-          <th>Numero</th>
-          <th>Capacité</th>
-          <th>Nombre de tableaux</th>
-          <th>Formateur responsable</th>
-        </tr> -->
-        <tr>
-        <td class="numero"></td>
-        <td class="capacite"></td>
-        <td class="nb_tabeaux"></td>
-        <td class="formateur"></td>
-        <input type="hidden" name="" value="" class="stdid">
-      </tr>
-    </table>
-    <h2 class="editForm-head" style="display:none">Edit-student-form</h2>
-    <div class="edit-form">
+    <form class="modal add-form mb-3">
+      <button onclick="funct()"><img src="./images/close.png" alt="" class="close"></button>
+      <h2>Ajouter une classe</h2>
+      <label>Numero</label>
+      <input type="number" class="form-control cnumero">
+      <label>Capacité</label>
+      <input type="text" name="" value="" class="form-control ccapacite">
+      <label>Nombre de tableaux</label>
+      <input type="text" name="" value="" class="form-control cnb_tableaux">
+      <label>Formateur</label>
+      <input type="text" name="" value="" class="form-control cformateur"><br>
+      <input type="submit" name="" value="Ajouter une classe" class="btn-primary submit-student">
+    </form>
+    <form class="modal edit-form">
       <h2 class="addForm-head">Edit-Form</h2>
       <img src="./images/close.png" alt="" class="close">
       <input type="hidden" name="" value="" class="sid">
-      <label>Name</label>
-      <input type="text" name="" value="" class="numero"><br>
-      <label>Father's name</label>
-      <input type="text" name="" value="" class="capacite"><br>
-      <label>Rollno</label>
-      <input type="text" name="" value="" class="nb_tableaux"><br>
-      <label>Degree</label>
-      <input type="text" name="" value="" class="formateur"><br>
-      <input type="submit" name="" value="save student" class="save-student">
+      <label>Numero</label>
+      <input type="text" name="" value="" class="form-control cnumero"><br>
+      <label>Capacité</label>
+      <input type="text" name="" value="" class="form-control ccapacite"><br>
+      <label>Nombre de tableaux</label>
+      <input type="text" name="" value="" class="form-control cnb_tableaux"><br>
+      <label>Formateur</label>
+      <input type="text" name="" value="" class="form-control cformateur"><br>
+      <input type="submit" name="" value="Enregistrer les modifications" class="save-student">
+    </form>
+    <div id="filtre">
+    <header>
+    <h1 class="heading">Gestion des classes</h1>
+    <div class="arrow">
+      <img src="./images/downarrow.png" class="downArrow"/>
     </div>
+  </header>
+   
+
+    <h2 class="editForm-head" style="display:none">Edit-student-form</h2>
+    
+<div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th >Numero</th>
+          <th >Capacité</th>
+          <th >Nombre de tableaux</th>
+          <th >Formateur</th>
+          <th ></th>
+        </tr>
+      </thead>
+      <tbody class="studentsList">
+        <tr>
+          <td class="numero_c"></th>
+          <td class="capacite_c"></td>
+          <td class="nb_tabeaux_c"></td>
+          <td class="formateur_c"></td>
+          <input type="hidden" name="" value="" class="stdid">
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
   </body>
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
