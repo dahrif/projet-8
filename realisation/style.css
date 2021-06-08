@@ -4,28 +4,24 @@ padding: 0;
 font-family: 'Droid Sans', sans-serif;
 }
 
-.filtre{
-	filter: blur(1.5rem);
-}
-
-
 .update-btn{
-	background-color: rgba(42, 42, 212, 0.85);
-	padding: 3px;
+	background-color: #0d6efd;
+	padding: .375rem .75rem;
 	color: white;
 	text-align: center;
     font-size: 18px;
-	border-radius: 5px;
+	border-radius: .25rem;
 	margin:0 10px;
 }
+
 .delete-btn{
 	background-color: rgba(236, 12, 12, 0.82);
-	padding: 3px;
+	padding: .375rem .75rem;
 	color: white;
 	text-align: center;
-	font-size: 18px;
-	border-radius: 5px;
-	margin: 0 25px;
+    font-size: 18px;
+	border-radius: .25rem;
+	margin:0 10px;
 }
 .delete-btn:hover{
 	cursor: pointer;
@@ -33,88 +29,7 @@ font-family: 'Droid Sans', sans-serif;
 }
 .update-btn:hover{
 	cursor: pointer;
-	background-color:rgba(42, 42, 212, 0.57);
+	background-color:#0d6dfd7c;
 }
 
-.modal{
-	background-color: rgb(228, 228, 228);
-	position: fixed;
-	top: 10vh;
-	left: 50vh;
-	z-index: 1060;
-	display: none;
-	width: 80%;
-	height: 70vh;
-	overflow-x: hidden;
-	overflow-y: auto;
-	outline: 0;
-}
 
-.arrow:hover{
-	cursor: pointer;
-}
-.add-form{
-	background-color: rgba(228, 228, 228, 0.5);
-	position: fixed;
-	top: 10vh;
-	left: 50vh;
-	display: none;
-	width: 70%;
-	height: auto;
-	max-width: 500px;
-	padding: 20px;
-	margin: 0 auto;
-}
-.close{
-float: right;
-margin-top: 10px;
-margin-right: 10px;
-}
-*{
-  box-sizing: border-box;
-}
-/*input-fields*/
-input{
-  width: 70%;
-  padding: 10px;
-  margin: 8px 0;
-  border: none;
-  font-size: 14px;
-  border-radius: 5px;
-}
-
-/*submitButton*/
-.submit-student{
-  padding: 10px;
-  width: 100%;
-  background-color:#3399cc;
-  cursor: pointer;
-  -webkit-border-radius:5px;
-  border: none;
-  font-size: 15px;
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-}
-
-.edit-form{
-	display: none;
-	width: 100%;
-	height: auto;
-	max-width: 500px;
-	background-color:rgb(189, 189, 189);
-	padding: 20px;
-	margin: 0 auto;
-}
-.save-student{
-	padding: 10px;
-	width: 100%;
-	background-color:#3399cc;
-	cursor: pointer;
-	-webkit-border-radius:5px;
-	border: none;
-	font-size: 15px;
-	margin: 0 auto;
-	text-align: center;
-	color: white;
-}

@@ -8,7 +8,7 @@ function getall() {
     success:function(data) {
       studentsList = JSON.parse(data);
       for (var i = 0; i < studentsList.length; i++) {
-        $(".studentsList").append('<tr><td>'+studentsList[i]["numero"]+'</td><td>'+studentsList[i]["capacite"]+'</td><td>'+studentsList[i]["nb_tableaux"]+'</td><td>'+studentsList[i]["formateur"]+'</td><td><span class="update-btn btn-sucess">update</span><span class="delete-btn">delete</span><input type="hidden" value="" class="stdID"></td></tr>');
+        $(".studentsList").append('<tr><td>'+studentsList[i]["numero"]+'</td><td>'+studentsList[i]["capacite"]+'</td><td>'+studentsList[i]["nb_tableaux"]+'</td><td>'+studentsList[i]["formateur"]+'</td><td><button type="button" class="btn btn-success update-btn" data-toggle="modal" data-target="#exampleModalCenter2">Update</button><span class="delete-btn">delete</span><input type="hidden" value="" class="stdID"></td></tr>');
       }
     }
   })
@@ -55,7 +55,7 @@ $(".save-student").click(function() {
 
 
 // Add a student to database
-$(".submit-student").click(function() {
+$(".enrg-salle").click(function() {
   var Numero = $(".cnumero").val();
   var Capacite = $(".ccapacite").val();
   var Nb_tableaux = $(".cnb_tableaux").val();
@@ -97,22 +97,17 @@ $(".downArrow").click(function() {
 $(".save-student").click(function() {
 $(".edit-form").hide();
 })
-$(".submit-student").click(function() {
-$(".add-form").hide();
+$(".enrg-salle").click(function() {
+$(".modal").hide();
+location.reload();
 })
 $(".close").click(function() {
 $(".add-form").hide();
-Element.classList.remove('filtre')
 })
 $(".close").click(function() {
 $(".edit-form").hide("fast",function() {
 getall();
 });
 })
-
-  
-function funct() {
-  var element = document.getElementById("filtre");
-  element.classList.toggle("filtre");
-}
 })
+
