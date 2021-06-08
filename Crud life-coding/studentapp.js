@@ -15,5 +15,27 @@ $(document).ready(function(){
       })
     }
     getall();
+
+    $(".submit-student").click(function(){
+      var sName = $(".studentname").Val();
+      var sFname = $(".studentfname").Val();
+      var sRollno = $(".studentrollno").Val();
+      var sDegree= $(".studentdegree").Val();
+      var sBranch = $(".studentbranch").Val();
+      $.ajax({
+        url:"addstudent.php",
+        method:"POST",
+        data: {
+          name : sName,
+          fathername : sFname,
+          Rollno : sRollno,
+          degree : sDegree,
+          branch : sBranch
+        },
+        success : function(data){
+          getAll();
+        }
+      })
+    })
     
  })
