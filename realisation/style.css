@@ -1,35 +1,50 @@
+
 body{
 margin: 0;
 padding: 0;
 font-family: 'Droid Sans', sans-serif;
+background: #5b3758;
 }
 
-.update-btn{
-	background-color: #0d6efd;
-	padding: .375rem .75rem;
-	color: white;
-	text-align: center;
-    font-size: 18px;
-	border-radius: .25rem;
-	margin:0 10px;
+.table td, .table th {
+    padding: 5px; }
+
+.btn{
+	padding: .175rem .75rem;
+}
+.btn-success{
+    background: #83b692 !important;
+}
+.btn-danger{
+    background: #f9627d !important;
+}
+.btn-primary{
+    background: #4ba3c3 !important; 
+    border: none;
 }
 
-.delete-btn{
-	background-color: rgba(236, 12, 12, 0.82);
-	padding: .375rem .75rem;
-	color: white;
-	text-align: center;
-    font-size: 18px;
-	border-radius: .25rem;
-	margin:0 10px;
+    .table-wrapper {
+        background: #ffffff63;
+        padding: 20px 25px;
+        margin: 30px 0;
+        border-radius: 3px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.164);
+    }
+.table-title {        
+    padding-bottom: 15px;
+    background: #c65b7c;
+    color: #fff;
+    padding: 16px 30px;
+    margin: -20px -25px 10px;
+    border-radius: 3px 3px 0 0;
 }
-.delete-btn:hover{
-	cursor: pointer;
-	background-color: rgba(236, 12, 12, 0.56);
+.table-title h1 {
+    margin: 5px 0 0;
 }
-.update-btn:hover{
-	cursor: pointer;
-	background-color:#0d6dfd7c;
+.table-title .btn {
+    float: right;
+    margin: 20px;
+    
 }
 
 

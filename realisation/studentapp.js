@@ -8,7 +8,7 @@ function getall() {
     success:function(data) {
       studentsList = JSON.parse(data);
       for (var i = 0; i < studentsList.length; i++) {
-        $(".studentsList").append('<tr><td>'+studentsList[i]["numero"]+'</td><td>'+studentsList[i]["capacite"]+'</td><td>'+studentsList[i]["nb_tableaux"]+'</td><td>'+studentsList[i]["formateur"]+'</td><td><button type="button" class="btn btn-success update-btn" data-toggle="modal" data-target="#exampleModalCenter2">Update</button><span class="delete-btn">delete</span><input type="hidden" value="" class="stdID"></td></tr>');
+        $(".studentsList").append('<tr class="text-center"><td>'+studentsList[i]["numero"]+'</td><td>'+studentsList[i]["capacite"]+'</td><td>'+studentsList[i]["nb_tableaux"]+'</td><td>'+studentsList[i]["formateur"]+'</td><td><span class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">Modifier</span><span class="btn btn-danger delete-btn ml-2 mb-0 mt-0">Supprimer</span><input type="hidden" value="" class="stdID"></td></tr>');
       }
     }
   })

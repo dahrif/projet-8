@@ -3,19 +3,47 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD-APP</title>
+    <title>Gestion-salles</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
-      <h1 class="heading">Gestion des classes</h1>
-    </header>
-    <div class="col-3 mb-3 mt-3">
-      <button type="button" class="btn btn-primary downArrow" data-toggle="modal" data-target="#exampleModalCenter">Ajouter une salle</button>
+    <div class="container">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h1>Gestion des salles</h1>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-success mt-10 downArrow" data-toggle="modal" data-target="#exampleModalCenter">Ajouter une salle</button>
+            </div>
+          </div>
+        </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr class="text-center">
+            <th >Numero</th>
+            <th >Capacité</th>
+            <th >Nombre de tableaux</th>
+            <th >Formateur</th>
+            <th ></th>
+          </tr>
+        </thead>
+        <tbody class="studentsList">
+          <tr class="text-center">
+            <td class="numero_c"></th>
+            <td class="capacite_c"></td>
+            <td class="nb_tabeaux_c"></td>
+            <td class="formateur_c"></td>
+            <input type="hidden" name="" value="" class="stdid">
+          </tr>
+        </tbody>
+      </table>
     </div>
+    
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -60,7 +88,7 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">Modifier</button>
+    
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -100,31 +128,14 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary save-student">Enregistrer les modification</button>
+            <button type="submit" class="btn btn-primary save-student mt-0 mb-0">Enregistrer les modification</button>
           </div>
         </div>
       </div>
     </div>
-
-    
-    <!-- <form class="modal edit-form">
-      <h2 class="addForm-head">Edit-Form</h2>
-      <input type="hidden" name="" value="" class="sid">
-      <label>Numero</label>
-      <input type="text" name="" value="" class="form-control cnumero"><br>
-      <label>Capacité</label>
-      <input type="text" name="" value="" class="form-control ccapacite"><br>
-      <label>Nombre de tableaux</label>
-      <input type="text" name="" value="" class="form-control cnb_tableaux"><br>
-      <label>Formateur</label>
-      <input type="text" name="" value="" class="form-control cformateur"><br>
-      <input type="submit" name="" value="Enregistrer les modifications" class="save-student">
-    </form>
-     -->
-
-    
+<!--     
 <div class="container">
-    <table class="table table-striped">
+    <table class="table table-striped table-hover">
       <thead>
         <tr>
           <th >Numero</th>
@@ -144,7 +155,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> -->
 </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
