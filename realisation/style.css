@@ -23,11 +23,15 @@ height: 100vh;
 .btn-primary{
 <<<<<<< HEAD
     background: #4ba3c3 !important; 
+<<<<<<< HEAD
   
 =======
     background: #03045e !important; 
     border: none;
 >>>>>>> 301d7c8558e94170445d969abcbc96e1fcf507bb
+=======
+    border: none;
+>>>>>>> parent of ab42487 (save)
 }
 
 
