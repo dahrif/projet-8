@@ -1,6 +1,7 @@
 body{
 margin: 0;
 padding: 0;
+<<<<<<< HEAD
 font-family: 'Open Sans', sans-serif;
 background: linear-gradient(#03045e , #caf0f8 );
 background-repeat: no-repeat;
@@ -49,6 +50,37 @@ height: 100vh;
     float: right;
     margin: 20px;
     
+=======
+font-family: 'Droid Sans', sans-serif;
+}
+
+.update-btn{
+	background-color: #0d6efd;
+	padding: .375rem .75rem;
+	color: white;
+	text-align: center;
+    font-size: 18px;
+	border-radius: .25rem;
+	margin:0 10px;
+}
+
+.delete-btn{
+	background-color: rgba(236, 12, 12, 0.82);
+	padding: .375rem .75rem;
+	color: white;
+	text-align: center;
+    font-size: 18px;
+	border-radius: .25rem;
+	margin:0 10px;
+}
+.delete-btn:hover{
+	cursor: pointer;
+	background-color: rgba(236, 12, 12, 0.56);
+}
+.update-btn:hover{
+	cursor: pointer;
+	background-color:#0d6dfd7c;
+>>>>>>> parent of a43d3b3 (commencer style)
 }
  .add{
      width: 40px;
