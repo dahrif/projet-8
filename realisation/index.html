@@ -37,7 +37,7 @@
             <h1>Gestion des salles</h1>
           </div>
           <div class="col-sm-6">
-            <span class="btn mt-10 downArrow" data-toggle="modal" data-target="#exampleModalCenter"><img class="add"
+            <span class="btn mt-10 downArrow" data-toggle="modal" data-target="#exampleModalCenter" id="ajouter"><img class="add"
                 src="add.svg" width="80" height="80"></span>
           </div>
         </div>
@@ -52,28 +52,26 @@
             <th class="align-middle"></th>
           </tr>
         </thead>
-        <tbody class="studentsList">
+        <tbody class="classeList">
 
           <tr class="text-center align-middle">
             <td class="numero_c "></th>
             <td class="capacite_c "></td>
             <td class="nb_tableaux_c "></td>
             <td class="formateur_c "></td>
-            <input type="hidden" name="" value="" class="stdid">
+            <input type="hidden" name="" value="" class="sid">
+
           </tr>
-    
+          </tbody>
 
-
-        </tbody>
       </table>
     </div>
 
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Ajouter Salle</h5>
+            <h5 class="modal-title" id="exampleModalCenterTitle">Ajouter  Salle</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -113,9 +111,9 @@
         </div>
       </div>
     </div>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content edit-form">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalCenterTitle">Modifier les informations</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -123,7 +121,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="edit-form">
+            <form class="">
               <div class="form-row">
                 <div class="col-12">
                   <label for="input1">Numero</label>
@@ -148,6 +146,8 @@
                   <input type="text" name="" value="" class="form-control cformateur" id="input4">
                 </div>
               </div>
+            <input type="hidden" name="" value="" class="sid">
+
 
             </form>
           </div>
@@ -158,11 +158,6 @@
       </div>
     </div>
   </div>
-  <script>
-    $(document).ready(function () {
-      $('#myTable').DataTable();
-    });
-  </script>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
